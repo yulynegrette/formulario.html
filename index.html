@@ -1,14 +1,86 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <title> Repositorio con Vscode </title>
+        <title> Gestores de Eventos </title>
         <meta charset="utf-8" />
         <meta name="description" content=Github repository">
     </head>
 
 <body>
-<h1> hello word </h1>
-<h1> Trabajando con Git y Github </h1>
-<h2> Git es el software de control de versiones y Github es la plaaforma de almacenamiento en la nube </h2>
+    <script>
+//repetir la solicitud si es null imprimir pagina
+        var edad = prompt("Indica tu edad");
+        while(! confirm("Tu edad es: " + edad)){edad = prompt("Indica tu edad: ");}
+
+        if (edad >= 18){
+            alert("Eres mayor de edad")
+        }else{
+            alert("No eres mayor de edad")
+            //cerrar pagina automaticamente
+            setTimeout("cerrar()", 5000);
+            document.write("Est pagina se cerrara en 5 segundos");
+        }
+        // funcion para cerrar la pagina
+        function cerrar(){
+            window.close();
+        }
+//DATOS DEL NAVEGADOR
+        document.writeln("appcodenames: "+ navigator.appCodeName);
+        document.writeln("<br>NombreNavegador: "+ navigator.appName);
+        document.writeln("<br>Version: "+ navigator.appVersion);
+        document.writeln("<br>CookiesHabilitadas: "+ navigator.cookieEnabled);
+        document.writeln("<br>plataforma: "+ navigator.platform);
+    </script>
+//FUNCION PARA IMPRIMIR
+    <br><br>
+    <a href="javascript:window.print()">Imprimir esta pagina</a>
+
+    <h2>Evento Onclick</h2>
+    <input type="button" value="Manejo de event" onclick="alert('hola mundo')"/>
+//Se definen las casillas y se les aplica colores por medio de los eventos onfocus y onblur
+    <h2>Evento OnFocus</h2>
+    username: <input type="text" values="" id="usuario" onfocus="foco1(this.id)" onblur="foco2(this.id)"> <br><br> 
+ 
+    password: <input type="password" values="" id="clave" onfocus="foco1(this.id)" onblur="foco2(this.id)"> <br><br>
+
+    <script>
+        //Funciones para darle color a las casillas
+        function foco1(x){
+            document.getElementById(x).style.background = "yellow"
+        }
+        function foco2(x){
+            document.getElementById(x).style.background = "white"
+        }
+    </script>
+
+//Ejemplo de onkeypress te avisa cuando presionas en algo
+<h2>Evento Onkeypresss</h2>
+<input type="text" onkeypress="teclear()">
+<script>
+function teclear(){
+    alert("presionaste una tecla en el cuadro de texto")
+}
+</script>
+
+<p>Selecciona un nuevo vehiculo de la lista</p> 
+//Lista de opciones desplegables
+<select id="combo" onchange="cambiarauto()">
+    <option value="Audi">Audi</option>
+    <option value="Toyota">Toyota</option>
+    <option value="Ferrari">Ferrari</option>
+    <option value="Mazda">Mazda</option>
+    <option value="Chevrolet">Chevrolet</option>
+</select>
+
+//TeXTO DONDE SE SELECCIONA
+<p id = "texto"></p>
+<script>
+    function cambiarauto(){
+        var x = document.getElementById("combo").value;
+       // alert("Has seleccionado: "+ x)
+       document.getElementById("texto").innerHTML= "Seleccionaste: " +x;
+    }
+</script>
+
 </body>
-</html>html>
+</html>
