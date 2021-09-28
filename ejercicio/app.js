@@ -10,4 +10,5 @@ var tema= document.body.className
     }else{
         this.textContent = "Light"
     }
+    console.log('current class name: ' + tema);
 });
