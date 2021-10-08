@@ -9,17 +9,17 @@
 </head>
 <body>
     <h1>REGISTRO PARA VACUNACIÓN COVID-19</h1>
-    <form action="" method="GET">
-        <label> Nombre: </label> <input type="text" name="Nombre" id="Nombre"/> 
+    <form action="" method="GET" name = "formRegistro">
+        <label> Nombre: </label> <input type="text" name="Nombre" id="nom"/> 
         <br>
-        <label> Usuario: </label> <input type="text"name="Usuario" id="Usuario"/>
+        <label> Usuario: </label> <input type="text"name="Usuario" id="username" required minlength="8"/>
         <br><br>
         <label> Sexo: </label> <input type="radio" name="Genero" id="Fem"/> Femenino
                                <input type="radio" name="Genero" id="Mas"/> Masculino
         <br><br>
-        <label> Correo: </label> <input type="email" name="Correo" id="Correo"/> 
+        <label> Correo: </label> <input type="email" name="Correo" id="email"/> 
         <br>
-        <label> Contraseña: </label> <input type="password" name="Contraseña" id="Contraseña"/>
+        <label> Contraseña: </label> <input type="password" name="Contraseña" id="password" required minlength="8"/>
         <br><br>
         <label for="Cargo"> Rol en el Equipo</label>
         <select name="Cargo" id="Cargo">
@@ -32,9 +32,9 @@
         <br><br>
         <input type="checkbox" name="check" id="check"> "Declaro haber leído y aceptar las condiciones generales del programa y la normativa sobre protección de datos"
         <br><br>
-        <input type="submit" name="Submit" id="Submit" value="Enviar">
+        <input type="submit" name="Submit" id="Submit" value="Enviar" onclick="validar_formulario();">
         <input type="reset" name="Reset" id="Reset" value="Borrar">
     </form>
-    
+    <script src="validar.js"></script>
 </body>
 </html>
