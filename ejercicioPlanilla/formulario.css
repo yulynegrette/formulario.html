@@ -24,3 +24,9 @@ form input{
 body{
     background-color: rgb(160, 160, 238);
 }
+
+img{
+    position: relative;
+    left: -40px;
+    bottom: -8px;
+}
